@@ -11,14 +11,15 @@ const createMovieController = async(request: Request, response:Response):Promise
   return response.status(201).json(newMovie)
 }
 
-const getMovieController = async(request: Request, response:Response) => {
+const getMovieController = async(request: Request, response:Response):Promise<Response> => {
   const movieID: number = parseInt(request.params.id)
   const movie = await getMovieService(movieID)
   return response.status(200).json(movie)
 }
 
 const getMoviesController = async(request: Request, response:Response): Promise<Response> => {
-  const movies = await getMoviesService()
+  const {page, perPage, sort, order} = request.query
+  const movies = await getMoviesService(page, perPage, order, sort)
   return response.status(200).json(movies)
 }
 

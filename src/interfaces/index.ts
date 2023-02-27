@@ -2,12 +2,14 @@ import {
   iMovie,
   iMovieCreate,
   iMovieUpdate,
-  iMovies
+  iMovies,
+  iMovieRepo
 } from "./movies.interfaces"
 
 export {
   iMovie,
   iMovieCreate,
   iMovieUpdate,
-  iMovies
+  iMovies,
+  iMovieRepo
 }

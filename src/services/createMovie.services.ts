@@ -1,5 +1,5 @@
 import { iMovie, iMovieCreate } from "../interfaces";
-import AppDataSource from "../data-source";
+import {AppDataSource} from "../data-source";
 import { Movie } from "../entities";
 import { Repository } from "typeorm";
 import { movieSchema } from "../schemas";

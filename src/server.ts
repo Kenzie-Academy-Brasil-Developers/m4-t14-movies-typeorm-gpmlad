@@ -1,5 +1,5 @@
 import app from "./app";
-import AppDataSource from "./data-source";
+import {AppDataSource} from "./data-source";
 import "dotenv/config"
 
 AppDataSource.initialize().then(() => {
@@ -7,6 +7,6 @@ AppDataSource.initialize().then(() => {
   app.listen(parseInt(process.env.PORT!), () => {
     console.log('Server is running!')
   })
-}).catch(error => {
+}).catch((error:any) => {
   console.log(error)
 })

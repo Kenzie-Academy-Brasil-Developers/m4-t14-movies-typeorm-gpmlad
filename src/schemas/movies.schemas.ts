@@ -4,8 +4,8 @@ const movieSchema = z.object({
   id: z.number(),
   name: z.string().min(3).max(50),
   description: z.string().nullish(),
-  duration: z.number().nonnegative(),
-  price: z.number().nonnegative()
+  duration: z.number().positive(),
+  price: z.number().positive()
 })
 
 const movieCreateSchema = movieSchema.omit({
