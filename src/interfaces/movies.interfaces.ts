@@ -1,3 +1,4 @@
+import { DeepPartial } from "typeorm"
 import { z } from "zod"
 import {
   allMoviesSchema,
@@ -9,7 +10,7 @@ import {
 type iMovie = z.infer<typeof movieSchema>
 type iMovies = z.infer<typeof allMoviesSchema>
 type iMovieCreate = z.infer<typeof movieCreateSchema>
-type iMovieUpdate = z.infer<typeof movieUpdateSchema>
+type iMovieUpdate = DeepPartial<iMovieCreate>
 
 export {
   iMovie,

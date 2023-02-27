@@ -1,6 +1,6 @@
 import { Request, Response} from "express"
 import { iMovieCreate } from "../interfaces"
-import { createMovieService, deleteMovieService, getMovieService, getMoviesService } from "../services"
+import { createMovieService, deleteMovieService, getMovieService, getMoviesService, updateMovieService } from "../services"
 
 const createMovieController = async(request: Request, response:Response):Promise<Response> => {
 
@@ -23,7 +23,8 @@ const getMoviesController = async(request: Request, response:Response): Promise<
 }
 
 const updateMovieController = async(request: Request, response:Response) => {
-  return response.json()
+  const user = await updateMovieService(request.body, parseInt(request.params.id))
+  return response.status(200).json(user)
   
 }
 
