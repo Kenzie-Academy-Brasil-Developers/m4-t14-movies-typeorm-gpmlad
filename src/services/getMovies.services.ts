@@ -8,7 +8,6 @@ const getMoviesService = async ():Promise<iMovies> => {
   const movieRepository: Repository<Movie> = AppDataSource.getRepository(Movie)
 
   const findMovies: Array<Movie> = await movieRepository.find()
-  console.log(findMovies)
   const movies = allMoviesSchema.parse(findMovies)
   return movies
 }
