@@ -11,13 +11,10 @@ import {
 type iMovie = z.infer<typeof movieSchema>
 type iMovies = z.infer<typeof allMoviesSchema>
 type iMovieCreate = z.infer<typeof movieCreateSchema>
-type iMovieUpdate = DeepPartial<iMovieCreate>
-type iMovieRepo = Repository<Movie>;
+
 
 export {
   iMovie,
   iMovieCreate,
-  iMovies,
-  iMovieUpdate,
-  iMovieRepo
+  iMovies
 }
